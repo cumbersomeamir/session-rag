@@ -129,3 +129,7 @@ def get_session_data():
 # Run the Flask app
 if __name__ == '__main__':
     app.run(host ="0.0.0.0", debug=True)
+
+
+#Limitations: current keyword search only works well. There is no support for relational answers - like what is the last message, or it can be multiple 
+#Semantic search function is a mixture of functions
