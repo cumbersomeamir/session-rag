@@ -133,3 +133,5 @@ if __name__ == '__main__':
 
 #Limitations: current keyword search only works well. There is no support for relational answers - like what is the last message, or it can be multiple 
 #Semantic search function is a mixture of functions
+#Condense prompts and responses
+
