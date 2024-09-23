@@ -58,13 +58,40 @@ Sample Response:
   }
 ]
 
+Endpoint 4: Add to Long term memory using uuid
+curl -X POST http://localhost:8888/add_to_long_term_memory \
+  -H "Content-Type: application/json" \
+  -d '{"uuid": "your_user_id", "text": "Your text here"}'
+
+Sample Response:
+
+{
+  "message": "Text added to long-term memory",
+  "text": "I am a student at the university of manchester"
+}
+
+Endpoint 5: Search Long term memory using uuid and query(prompt)
+
+curl -X POST http://localhost:8888/search_long_term_memory \
+  -H "Content-Type: application/json" \
+  -d '{"uuid": "your_user_id", "query": "Your query here", "top_n": 5}'
+
+Sample Response:
+
+{
+  "top_scores": [
+    0.3520803910969268,
+    0.1517654605923644
+  ],
+  "top_texts": [
+    "I am a big fan of linkin park",
+    "I am a student at the university of manchester"
+  ]
+}
 
 
 To Do:
 
 
-1. Add text to long term memory endpoint - conditionally check if we need to add to long term memory, create embedding and add to a db created for long term memory of every user
-2. Search through uuid and query- as database will be constant for every user. 
-3. Manage thresholds in the backend only and return only values which make sense
 4. No semantic relativily - It, last one, above etc.
 
