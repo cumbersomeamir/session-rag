@@ -89,9 +89,56 @@ Sample Response:
   ]
 }
 
+Endpoint 6: Relative search which returns the relative index [x], where i is the current index of prompt and x and i-x is the index of the most relevant message:
 
-To Do:
+Example 1: 
+
+curl -X POST http://localhost:8888/resolve_references \
+  -H "Content-Type: application/json" \
+  -d '{"session_id": "111", "text": "Tell me more about it"}'
+
+Sample Response:
+{
+  "relative_indices": [
+    1
+  ]
+}
+
+Example 2:
+
+curl -X POST http://localhost:8888/resolve_references \
+  -H "Content-Type: application/json" \
+  -d '{"session_id": "111", "text": "Which one is better?"}'
+
+Sample Response:
+
+{
+  "relative_indices": [
+    1,
+    2
+  ]
+}
+
+Example 3:
+
+curl -X POST http://localhost:8888/resolve_references \
+  -H "Content-Type: application/json" \
+  -d '{"session_id": "111", "text": "What was my last message?"}'
+
+Sample Response:
+{
+  "relative_indices": [
+    1
+  ]
+}
 
 
-4. No semantic relativily - It, last one, above etc.
+**to do**
+1. Increase number of keywords and phrases in dictionaries
+2. implement fuzzy search for mispelled words
+3. Conditionally call resolve_references endpoint based on keywords
+
+
+
+
 
