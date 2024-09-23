@@ -60,4 +60,11 @@ Sample Response:
 
 
 
+To Do:
+
+
+1. Add text to long term memory endpoint - conditionally check if we need to add to long term memory, create embedding and add to a db created for long term memory of every user
+2. Search through uuid and query- as database will be constant for every user. 
+3. Manage thresholds in the backend only and return only values which make sense
+4. No semantic relativily - It, last one, above etc.
 
